@@ -7,23 +7,27 @@ const config: Config = {
     container: {
       center: true,
       padding: '1rem',
-      screens: {
-        '2xl': '1400px',
-      },
+      screens: { '2xl': '1400px' },
     },
     extend: {
       colors: {
-        // ─── Brand ───────────────────────────────────────
+        // ─── Mauritanian brand palette ───────────────────
         brand: {
-          black: '#0B0F19',
-          royal: '#2563EB',
-          cyan: '#22D3EE',
-          emerald: '#10B981',
-          purple: '#7C3AED',
-          gray: '#F1F5F9',
-          white: '#FFFFFF',
+          yellow: '#FFCC00',       // Mauritanian flag yellow (primary CTA)
+          yellowSoft: '#FFE066',
+          yellowDark: '#E6B800',
+          green: '#1E3A2F',        // Deep green (logo bg, accents)
+          greenSoft: '#2D5040',
+          live: '#16A34A',         // Live/active status
+          red: '#DC2626',          // Mauritanian red
+          ink: '#1F2937',          // Primary text
+          muted: '#6B7280',        // Secondary text
+          bg: '#F9F9F9',           // Page background
+          card: '#FFFFFF',         // Card background
+          border: '#E5E7EB',       // Borders
+          verified: '#2563EB',     // Verified badge blue
         },
-        // ─── ShadCN tokens ───────────────────────────────
+        // ─── ShadCN tokens (light theme) ─────────────────
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -64,22 +68,11 @@ const config: Config = {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         arabic: ['var(--font-arabic)', 'system-ui', 'sans-serif'],
       },
-      backgroundImage: {
-        'grid-pattern':
-          'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-cyber':
-          'linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #22D3EE 100%)',
-        'gradient-luxury':
-          'linear-gradient(135deg, #0B0F19 0%, #1e1b4b 50%, #0B0F19 100%)',
-      },
       boxShadow: {
-        glow: '0 0 40px -10px rgba(34, 211, 238, 0.5)',
-        'glow-purple': '0 0 60px -10px rgba(124, 58, 237, 0.6)',
-        'glow-emerald': '0 0 40px -10px rgba(16, 185, 129, 0.5)',
-        glass: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-        neumorph:
-          'inset 2px 2px 5px rgba(255,255,255,0.05), inset -2px -2px 5px rgba(0,0,0,0.5)',
+        soft: '0 1px 2px rgba(16,24,40,0.04), 0 1px 3px rgba(16,24,40,0.06)',
+        card: '0 4px 16px rgba(16,24,40,0.06)',
+        'card-hover': '0 10px 30px rgba(16,24,40,0.08)',
+        glow: '0 8px 24px -8px rgba(255,204,0,0.6)',
       },
       keyframes: {
         'accordion-down': {
@@ -94,26 +87,16 @@ const config: Config = {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
-        'glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(34,211,238,0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(34,211,238,0.6)' },
-        },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
-        },
-        'gradient-x': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         shimmer: 'shimmer 2.5s linear infinite',
-        'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
         float: 'float 6s ease-in-out infinite',
-        'gradient-x': 'gradient-x 8s ease infinite',
       },
     },
   },

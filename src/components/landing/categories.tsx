@@ -17,36 +17,35 @@ import {
 } from 'lucide-react';
 
 const categories = [
-  { slug: 'phones', name: 'Phones', icon: Smartphone, color: 'from-brand-cyan to-brand-royal' },
-  { slug: 'vehicles', name: 'Vehicles', icon: Car, color: 'from-brand-royal to-brand-purple' },
-  { slug: 'real-estate', name: 'Real Estate', icon: Home, color: 'from-brand-purple to-pink-500' },
-  { slug: 'fashion', name: 'Fashion', icon: Shirt, color: 'from-pink-500 to-rose-500' },
-  { slug: 'jobs', name: 'Jobs', icon: Briefcase, color: 'from-amber-500 to-orange-500' },
-  { slug: 'furniture', name: 'Furniture', icon: Sofa, color: 'from-emerald-500 to-teal-500' },
-  { slug: 'kids', name: 'Kids', icon: Baby, color: 'from-rose-400 to-pink-400' },
-  { slug: 'sports', name: 'Sports', icon: Dumbbell, color: 'from-brand-emerald to-brand-cyan' },
-  { slug: 'art', name: 'Art', icon: Palette, color: 'from-brand-purple to-brand-cyan' },
-  { slug: 'tools', name: 'Tools', icon: Hammer, color: 'from-slate-400 to-slate-600' },
+  { slug: 'phones', name: 'هواتف', icon: Smartphone },
+  { slug: 'vehicles', name: 'سيارات', icon: Car },
+  { slug: 'real-estate', name: 'عقارات', icon: Home },
+  { slug: 'fashion', name: 'أزياء', icon: Shirt },
+  { slug: 'jobs', name: 'وظائف', icon: Briefcase },
+  { slug: 'furniture', name: 'أثاث', icon: Sofa },
+  { slug: 'kids', name: 'أطفال', icon: Baby },
+  { slug: 'sports', name: 'رياضة', icon: Dumbbell },
+  { slug: 'art', name: 'فن', icon: Palette },
+  { slug: 'tools', name: 'أدوات', icon: Hammer },
 ];
 
 export function Categories({ locale }: { locale: string }) {
   const t = useTranslations('Landing');
 
   return (
-    <section className="py-20">
+    <section className="py-16">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-8"
         >
-          <h2 className="font-display text-3xl sm:text-4xl font-bold">
-            {t('categoriesTitle')}
-          </h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-ink">{t('categoriesTitle')}</h2>
+          <p className="text-sm text-brand-muted mt-1">تسوق حسب اهتماماتك</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.slug}
@@ -57,20 +56,12 @@ export function Categories({ locale }: { locale: string }) {
             >
               <Link
                 href={`/${locale}/marketplace?category=${cat.slug}`}
-                className="group block relative overflow-hidden rounded-3xl glass p-6 hover:border-brand-cyan/40 transition-all hover:-translate-y-1"
+                className="group flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-brand-border shadow-soft hover:border-brand-yellow hover:shadow-card-hover hover:-translate-y-1 transition-all"
               >
-                <div
-                  className={`absolute -top-12 -right-12 h-32 w-32 rounded-full bg-gradient-to-br ${cat.color} opacity-20 blur-2xl group-hover:opacity-40 transition-opacity`}
-                />
-                <div
-                  className={`relative inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-gradient-to-br ${cat.color} shadow-glow mb-4`}
-                >
-                  <cat.icon className="h-6 w-6 text-white" />
+                <div className="h-14 w-14 rounded-2xl bg-brand-yellow/15 group-hover:bg-brand-yellow flex items-center justify-center mb-3 transition-colors">
+                  <cat.icon className="h-7 w-7 text-brand-yellowDark group-hover:text-brand-ink transition-colors" />
                 </div>
-                <div className="relative font-semibold text-sm">{cat.name}</div>
-                <div className="relative text-xs text-muted-foreground mt-0.5">
-                  Explore →
-                </div>
+                <div className="font-semibold text-sm text-brand-ink">{cat.name}</div>
               </Link>
             </motion.div>
           ))}
