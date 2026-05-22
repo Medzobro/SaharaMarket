@@ -1,0 +1,92 @@
+{
+  "Brand": {
+    "name": "SaharaMarket",
+    "tagline": "Mauritania's premium marketplace"
+  },
+  "Nav": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "stores": "Stores",
+    "categories": "Categories",
+    "messages": "Messages",
+    "login": "Sign in",
+    "register": "Sign up",
+    "logout": "Sign out",
+    "dashboard": "Dashboard",
+    "sell": "Sell",
+    "search": "Search anything..."
+  },
+  "Landing": {
+    "heroBadge": "#1 marketplace in Mauritania",
+    "heroTitle": "Discover. Shop. Connect.",
+    "heroSubtitle": "Thousands of Mauritanian products and stores in one place. Premium design, world-class experience.",
+    "ctaPrimary": "Start shopping",
+    "ctaSecondary": "Open your store",
+    "trendingTitle": "Trending now",
+    "trendingSub": "What everyone is searching for",
+    "categoriesTitle": "Browse by category",
+    "storesTitle": "Featured stores",
+    "storesSub": "Hand-picked verified sellers",
+    "ctaBoxTitle": "Are you a seller?",
+    "ctaBoxBody": "Open your online store in minutes and start selling to thousands of customers across Mauritania.",
+    "ctaBoxBtn": "Create your store — free"
+  },
+  "Stats": {
+    "users": "users",
+    "products": "products",
+    "stores": "stores",
+    "cities": "cities"
+  },
+  "Auth": {
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Sign in to continue",
+    "registerTitle": "Create your account",
+    "registerSubtitle": "Join the SaharaMarket community",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "confirmPassword": "Confirm password",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loginBtn": "Sign in",
+    "registerBtn": "Create account",
+    "or": "or",
+    "google": "Continue with Google",
+    "facebook": "Continue with Facebook",
+    "buyerRole": "Buyer",
+    "sellerRole": "Seller"
+  },
+  "Marketplace": {
+    "title": "Marketplace",
+    "filters": "Filters",
+    "sort": "Sort",
+    "newest": "Newest",
+    "priceLow": "Price: low to high",
+    "priceHigh": "Price: high to low",
+    "popular": "Most popular",
+    "all": "All",
+    "noResults": "No results found"
+  },
+  "Product": {
+    "contactSeller": "Contact seller",
+    "addToFavorites": "Add to favorites",
+    "share": "Share",
+    "report": "Report",
+    "similar": "Similar products",
+    "details": "Details",
+    "condition": "Condition",
+    "location": "Location",
+    "posted": "Posted",
+    "negotiable": "Negotiable"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back"
+  }
+}

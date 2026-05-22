@@ -1,0 +1,92 @@
+{
+  "Brand": {
+    "name": "صحراء ماركت",
+    "tagline": "السوق الأنيق لموريتانيا"
+  },
+  "Nav": {
+    "home": "الرئيسية",
+    "marketplace": "السوق",
+    "stores": "المتاجر",
+    "categories": "التصنيفات",
+    "messages": "الرسائل",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "dashboard": "لوحة التحكم",
+    "sell": "بيع منتج",
+    "search": "ابحث عن أي شيء..."
+  },
+  "Landing": {
+    "heroBadge": "منصة رقم 1 في موريتانيا",
+    "heroTitle": "اكتشف. تسوّق. تواصل.",
+    "heroSubtitle": "آلاف المنتجات والمتاجر الموريتانية في مكان واحد. تصميم فخم، تجربة عالمية.",
+    "ctaPrimary": "ابدأ التسوق",
+    "ctaSecondary": "افتح متجرك",
+    "trendingTitle": "الأكثر رواجاً",
+    "trendingSub": "منتجات يبحث عنها الجميع الآن",
+    "categoriesTitle": "تصفح حسب التصنيف",
+    "storesTitle": "متاجر مميزة",
+    "storesSub": "بائعون موثقون نختارهم بعناية",
+    "ctaBoxTitle": "هل أنت بائع؟",
+    "ctaBoxBody": "افتح متجرك الإلكتروني خلال دقائق وابدأ البيع لآلاف العملاء في موريتانيا.",
+    "ctaBoxBtn": "أنشئ متجرك مجاناً"
+  },
+  "Stats": {
+    "users": "مستخدم",
+    "products": "منتج",
+    "stores": "متجر",
+    "cities": "مدينة"
+  },
+  "Auth": {
+    "loginTitle": "أهلاً بعودتك",
+    "loginSubtitle": "سجّل دخولك للمتابعة",
+    "registerTitle": "أنشئ حسابك",
+    "registerSubtitle": "انضم إلى مجتمع صحراء ماركت",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "username": "اسم المستخدم",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "loginBtn": "تسجيل الدخول",
+    "registerBtn": "إنشاء الحساب",
+    "or": "أو",
+    "google": "متابعة عبر جوجل",
+    "facebook": "متابعة عبر فيسبوك",
+    "buyerRole": "مشتري",
+    "sellerRole": "بائع"
+  },
+  "Marketplace": {
+    "title": "السوق",
+    "filters": "الفلاتر",
+    "sort": "ترتيب",
+    "newest": "الأحدث",
+    "priceLow": "السعر: من الأقل",
+    "priceHigh": "السعر: من الأعلى",
+    "popular": "الأكثر شعبية",
+    "all": "الكل",
+    "noResults": "لم نعثر على نتائج"
+  },
+  "Product": {
+    "contactSeller": "راسل البائع",
+    "addToFavorites": "أضف للمفضلة",
+    "share": "مشاركة",
+    "report": "إبلاغ",
+    "similar": "منتجات مشابهة",
+    "details": "التفاصيل",
+    "condition": "الحالة",
+    "location": "الموقع",
+    "posted": "نُشر",
+    "negotiable": "السعر قابل للتفاوض"
+  },
+  "Common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "back": "رجوع"
+  }
+}

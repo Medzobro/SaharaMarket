@@ -1,0 +1,92 @@
+{
+  "Brand": {
+    "name": "SaharaMarket",
+    "tagline": "Le marketplace premium de Mauritanie"
+  },
+  "Nav": {
+    "home": "Accueil",
+    "marketplace": "Marketplace",
+    "stores": "Boutiques",
+    "categories": "Catégories",
+    "messages": "Messages",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "dashboard": "Tableau de bord",
+    "sell": "Vendre",
+    "search": "Chercher n'importe quoi..."
+  },
+  "Landing": {
+    "heroBadge": "Plateforme N°1 en Mauritanie",
+    "heroTitle": "Découvrez. Achetez. Connectez.",
+    "heroSubtitle": "Des milliers de produits et boutiques mauritaniennes en un seul endroit. Design premium, expérience mondiale.",
+    "ctaPrimary": "Commencer",
+    "ctaSecondary": "Ouvrir ma boutique",
+    "trendingTitle": "Tendances",
+    "trendingSub": "Ce que tout le monde recherche",
+    "categoriesTitle": "Parcourir par catégorie",
+    "storesTitle": "Boutiques en vedette",
+    "storesSub": "Vendeurs vérifiés sélectionnés avec soin",
+    "ctaBoxTitle": "Vous êtes vendeur ?",
+    "ctaBoxBody": "Ouvrez votre boutique en quelques minutes et commencez à vendre à des milliers de clients en Mauritanie.",
+    "ctaBoxBtn": "Créer ma boutique gratuitement"
+  },
+  "Stats": {
+    "users": "utilisateurs",
+    "products": "produits",
+    "stores": "boutiques",
+    "cities": "villes"
+  },
+  "Auth": {
+    "loginTitle": "Bon retour",
+    "loginSubtitle": "Connectez-vous pour continuer",
+    "registerTitle": "Créez votre compte",
+    "registerSubtitle": "Rejoignez la communauté SaharaMarket",
+    "email": "Email",
+    "password": "Mot de passe",
+    "username": "Nom d'utilisateur",
+    "confirmPassword": "Confirmer le mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "loginBtn": "Se connecter",
+    "registerBtn": "Créer le compte",
+    "or": "ou",
+    "google": "Continuer avec Google",
+    "facebook": "Continuer avec Facebook",
+    "buyerRole": "Acheteur",
+    "sellerRole": "Vendeur"
+  },
+  "Marketplace": {
+    "title": "Marketplace",
+    "filters": "Filtres",
+    "sort": "Trier",
+    "newest": "Plus récents",
+    "priceLow": "Prix: croissant",
+    "priceHigh": "Prix: décroissant",
+    "popular": "Populaires",
+    "all": "Tous",
+    "noResults": "Aucun résultat"
+  },
+  "Product": {
+    "contactSeller": "Contacter le vendeur",
+    "addToFavorites": "Ajouter aux favoris",
+    "share": "Partager",
+    "report": "Signaler",
+    "similar": "Produits similaires",
+    "details": "Détails",
+    "condition": "État",
+    "location": "Lieu",
+    "posted": "Publié",
+    "negotiable": "Prix négociable"
+  },
+  "Common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "back": "Retour"
+  }
+}
