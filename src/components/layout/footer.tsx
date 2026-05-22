@@ -1,61 +1,59 @@
 import Link from 'next/link';
-import { ShoppingBag, Github, Twitter, Instagram, Facebook } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { Store, Github, Twitter, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
+  const t = useTranslations('Brand');
   return (
-    <footer className="mt-32 border-t border-white/5">
+    <footer className="mt-32 bg-white border-t border-brand-border">
       <div className="container py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2.5 mb-4">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-brand-cyan via-brand-royal to-brand-purple p-[1.5px]">
-              <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-background">
-                <ShoppingBag className="h-4 w-4 text-brand-cyan" />
-              </div>
+            <div className="h-10 w-10 rounded-full bg-brand-green flex items-center justify-center">
+              <Store className="h-5 w-5 text-brand-yellow" />
             </div>
-            <span className="font-display text-lg font-bold text-gradient">SaharaMarket</span>
+            <span className="font-bold text-lg text-brand-ink">{t('name')}</span>
           </div>
-          <p className="text-sm text-muted-foreground max-w-xs">
-            The premium marketplace for Mauritania. Built with passion in Nouakchott.
-          </p>
+          <p className="text-sm text-brand-muted max-w-xs leading-relaxed">{t('tagline')}</p>
         </div>
 
         <div>
-          <h4 className="font-semibold mb-3 text-sm">Marketplace</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link href="#" className="hover:text-brand-cyan">Categories</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Stores</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Trending</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">New listings</Link></li>
+          <h4 className="font-semibold mb-3 text-sm">السوق</h4>
+          <ul className="space-y-2 text-sm text-brand-muted">
+            <li><Link href="#" className="hover:text-brand-yellowDark">التصنيفات</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">المتاجر</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">الترند</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">إعلانات جديدة</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-3 text-sm">Company</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link href="#" className="hover:text-brand-cyan">About</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Careers</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Press</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Contact</Link></li>
+          <h4 className="font-semibold mb-3 text-sm">الشركة</h4>
+          <ul className="space-y-2 text-sm text-brand-muted">
+            <li><Link href="#" className="hover:text-brand-yellowDark">من نحن</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">الوظائف</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">المدونة</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">اتصل بنا</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-3 text-sm">Legal</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link href="#" className="hover:text-brand-cyan">Terms</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Privacy</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Cookies</Link></li>
-            <li><Link href="#" className="hover:text-brand-cyan">Security</Link></li>
+          <h4 className="font-semibold mb-3 text-sm">قانوني</h4>
+          <ul className="space-y-2 text-sm text-brand-muted">
+            <li><Link href="#" className="hover:text-brand-yellowDark">الشروط</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">الخصوصية</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">الكوكيز</Link></li>
+            <li><Link href="#" className="hover:text-brand-yellowDark">الأمان</Link></li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-white/5">
-        <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} SaharaMarket. All rights reserved.</p>
+      <div className="border-t border-brand-border">
+        <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-muted">
+          <p>© {new Date().getFullYear()} {t('name')}. كل الحقوق محفوظة.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" aria-label="Twitter"><Twitter className="h-4 w-4 hover:text-brand-cyan" /></Link>
-            <Link href="#" aria-label="Instagram"><Instagram className="h-4 w-4 hover:text-brand-cyan" /></Link>
-            <Link href="#" aria-label="Facebook"><Facebook className="h-4 w-4 hover:text-brand-cyan" /></Link>
-            <Link href="#" aria-label="GitHub"><Github className="h-4 w-4 hover:text-brand-cyan" /></Link>
+            <Link href="#" aria-label="Twitter"><Twitter className="h-4 w-4 hover:text-brand-yellowDark" /></Link>
+            <Link href="#" aria-label="Instagram"><Instagram className="h-4 w-4 hover:text-brand-yellowDark" /></Link>
+            <Link href="#" aria-label="Facebook"><Facebook className="h-4 w-4 hover:text-brand-yellowDark" /></Link>
+            <Link href="#" aria-label="GitHub"><Github className="h-4 w-4 hover:text-brand-yellowDark" /></Link>
           </div>
         </div>
       </div>

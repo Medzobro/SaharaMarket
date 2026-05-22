@@ -14,7 +14,12 @@ const jakarta = Plus_Jakarta_Sans({
   variable: '--font-display',
   display: 'swap',
 });
-const cairo = Cairo({ subsets: ['arabic'], variable: '--font-arabic', display: 'swap' });
+const cairo = Cairo({
+  subsets: ['arabic'],
+  variable: '--font-arabic',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -40,29 +45,19 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={isRtl ? 'rtl' : 'ltr'}
-      className={`${inter.variable} ${jakarta.variable} ${cairo.variable} dark`}
+      className={`${inter.variable} ${jakarta.variable} ${cairo.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-background text-foreground">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
-            {/* Background ornaments */}
-            <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-              <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[1100px] rounded-full bg-brand-purple/15 blur-[140px]" />
-              <div className="absolute bottom-0 right-0 h-[400px] w-[600px] rounded-full bg-brand-cyan/10 blur-[120px]" />
-              <div className="absolute inset-0 grid-bg opacity-30" />
-            </div>
-
             <Header locale={locale as Locale} />
             <main className="relative">{children}</main>
             <Footer />
             <Toaster
-              theme="dark"
               position={isRtl ? 'top-left' : 'top-right'}
-              toastOptions={{
-                className:
-                  'bg-card/80 backdrop-blur-xl border border-white/10 text-foreground',
-              }}
+              richColors
+              closeButton
             />
           </Providers>
         </NextIntlClientProvider>

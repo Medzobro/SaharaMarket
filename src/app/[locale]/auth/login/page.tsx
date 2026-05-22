@@ -7,12 +7,14 @@ import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { toast } from 'sonner';
-import { Mail, Lock, Loader2, ArrowRight } from 'lucide-react';
+import { Mail, Lock, Loader2, Store } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
 
 export default function LoginPage() {
   const t = useTranslations('Auth');
+  const tBrand = useTranslations('Brand');
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
@@ -34,10 +36,10 @@ export default function LoginPage() {
     setLoading(false);
 
     if (res?.error) {
-      toast.error('Invalid email or password');
+      toast.error('بيانات الدخول غير صحيحة');
       return;
     }
-    toast.success('Welcome back!');
+    toast.success('أهلاً بك من جديد!');
     router.push(callbackUrl);
     router.refresh();
   }
@@ -54,74 +56,104 @@ export default function LoginPage() {
       transition={{ duration: 0.4 }}
       className="w-full max-w-md"
     >
-      <div className="glass-card rounded-3xl p-8 sm:p-10 border-glow">
-        <div className="text-center mb-8">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-cyan via-brand-royal to-brand-purple shadow-glow mb-4">
-            <Lock className="h-6 w-6 text-white" />
+      <div className="bg-white rounded-2xl border border-brand-border shadow-card p-8 sm:p-10">
+        {/* Logo */}
+        <div className="flex flex-col items-center mb-6">
+          <div className="h-24 w-24 rounded-full bg-brand-green flex items-center justify-center shadow-soft">
+            <Store className="h-12 w-12 text-brand-yellow" strokeWidth={2} />
           </div>
-          <h1 className="font-display text-3xl font-bold">{t('loginTitle')}</h1>
-          <p className="text-muted-foreground mt-2 text-sm">{t('loginSubtitle')}</p>
+          <h1 className="text-2xl font-bold text-brand-ink mt-3">{tBrand('name')}</h1>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-4">
-          <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground">{t('email')}</label>
+        {/* Tabs */}
+        <div className="flex items-center justify-around mb-2 mt-6">
+          <Link
+            href={`/${locale}/auth/register`}
+            className="pb-2 px-2 text-base font-medium text-brand-muted hover:text-brand-ink transition-colors"
+          >
+            {t('registerBtn')}
+          </Link>
+          <button
+            type="button"
+            className={cn(
+              'pb-2 px-2 text-base font-bold transition-colors relative',
+              'text-brand-yellowDark'
+            )}
+          >
+            {t('loginBtn')}
+            <span className="absolute bottom-0 inset-x-0 h-[3px] bg-brand-yellow rounded-full" />
+          </button>
+        </div>
+        <div className="border-b border-brand-border mb-6" />
+
+        {/* Form */}
+        <form onSubmit={onSubmit} className="space-y-5">
+          <div>
+            <label className="text-sm font-bold text-brand-ink block mb-2">
+              {t('email')}
+            </label>
             <div className="relative">
-              <Mail className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input name="email" type="email" required className="ps-10" placeholder="you@example.com" />
+              <Mail className="absolute start-3 top-1/2 -translate-y-1/2 h-5 w-5 text-brand-muted" />
+              <Input name="email" type="email" required className="ps-11" placeholder="example@mail.com" />
             </div>
           </div>
 
-          <div className="space-y-1.5">
-            <div className="flex items-center justify-between">
-              <label className="text-xs font-medium text-muted-foreground">{t('password')}</label>
-              <Link href={`/${locale}/auth/forgot-password`} className="text-xs text-brand-cyan hover:underline">
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-sm font-bold text-brand-ink">{t('password')}</label>
+              <Link
+                href={`/${locale}/auth/forgot-password`}
+                className="text-xs text-brand-yellowDark hover:underline"
+              >
                 {t('forgotPassword')}
               </Link>
             </div>
             <div className="relative">
-              <Lock className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input name="password" type="password" required className="ps-10" placeholder="••••••••" />
+              <Lock className="absolute start-3 top-1/2 -translate-y-1/2 h-5 w-5 text-brand-muted" />
+              <Input name="password" type="password" required className="ps-11" placeholder="••••••••" />
             </div>
           </div>
 
-          <Button type="submit" disabled={loading} size="lg" className="w-full">
+          <Button type="submit" disabled={loading} size="lg" className="w-full h-14 text-base">
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : t('loginBtn')}
-            {!loading && <ArrowRight className="h-4 w-4 rtl:rotate-180" />}
           </Button>
         </form>
 
         <div className="my-6 flex items-center gap-3">
-          <div className="flex-1 h-px bg-white/10" />
-          <span className="text-xs text-muted-foreground">{t('or')}</span>
-          <div className="flex-1 h-px bg-white/10" />
+          <div className="flex-1 h-px bg-brand-border" />
+          <span className="text-xs text-brand-muted">{t('or')}</span>
+          <div className="flex-1 h-px bg-brand-border" />
         </div>
 
         <div className="space-y-2">
-          <Button variant="outline" size="lg" className="w-full" onClick={() => oauth('google')} disabled={oauthLoading !== null}>
-            {oauthLoading === 'google' ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <GoogleIcon />
-            )}
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full"
+            onClick={() => oauth('google')}
+            disabled={oauthLoading !== null}
+          >
+            {oauthLoading === 'google' ? <Loader2 className="h-4 w-4 animate-spin" /> : <GoogleIcon />}
             {t('google')}
           </Button>
-          <Button variant="outline" size="lg" className="w-full" onClick={() => oauth('facebook')} disabled={oauthLoading !== null}>
-            {oauthLoading === 'facebook' ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <FacebookIcon />
-            )}
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full"
+            onClick={() => oauth('facebook')}
+            disabled={oauthLoading !== null}
+          >
+            {oauthLoading === 'facebook' ? <Loader2 className="h-4 w-4 animate-spin" /> : <FacebookIcon />}
             {t('facebook')}
           </Button>
         </div>
 
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          {t('noAccount')}{' '}
-          <Link href={`/${locale}/auth/register`} className="text-brand-cyan font-medium hover:underline">
-            {t('registerBtn')}
-          </Link>
-        </p>
+        <button
+          onClick={() => router.push(`/${locale}`)}
+          className="mt-6 w-full text-center text-sm text-brand-muted hover:text-brand-ink underline underline-offset-4"
+        >
+          تسجيل الدخول كضيف
+        </button>
       </div>
     </motion.div>
   );

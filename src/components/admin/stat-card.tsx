@@ -9,59 +9,53 @@ export function StatCard({
   value,
   delta,
   icon: Icon,
-  color = 'cyan',
+  color = 'yellow',
 }: {
   label: string;
   value: string | number;
   delta?: number;
   icon: LucideIcon;
-  color?: 'cyan' | 'purple' | 'emerald' | 'royal';
+  color?: 'yellow' | 'green' | 'live' | 'blue';
 }) {
   const colorMap = {
-    cyan: 'from-brand-cyan to-brand-royal',
-    purple: 'from-brand-purple to-pink-500',
-    emerald: 'from-brand-emerald to-brand-cyan',
-    royal: 'from-brand-royal to-brand-purple',
+    yellow: 'bg-brand-yellow/15 text-brand-yellowDark',
+    green: 'bg-brand-green/10 text-brand-green',
+    live: 'bg-brand-live/10 text-brand-live',
+    blue: 'bg-brand-verified/10 text-brand-verified',
   } as const;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass-card rounded-3xl p-6 relative overflow-hidden group hover:border-brand-cyan/30 transition-colors"
+      className="rounded-2xl bg-white border border-brand-border shadow-soft p-5 hover:shadow-card transition-shadow"
     >
-      <div
-        className={cn(
-          'absolute -top-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-20 blur-2xl group-hover:opacity-40 transition-opacity',
-          colorMap[color]
-        )}
-      />
-      <div className="relative flex items-start justify-between">
+      <div className="flex items-start justify-between">
         <div>
-          <div className="text-xs text-muted-foreground uppercase tracking-wider">
+          <div className="text-xs text-brand-muted uppercase tracking-wider font-medium">
             {label}
           </div>
-          <div className="font-display text-3xl font-bold mt-2">{value}</div>
+          <div className="text-2xl font-bold text-brand-ink mt-1.5">{value}</div>
           {delta !== undefined && (
             <div
               className={cn(
-                'mt-2 inline-flex items-center gap-1 text-xs font-medium',
-                delta >= 0 ? 'text-brand-emerald' : 'text-destructive'
+                'mt-2 inline-flex items-center gap-1 text-xs font-semibold',
+                delta >= 0 ? 'text-brand-live' : 'text-destructive'
               )}
             >
               {delta >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
               {delta >= 0 ? '+' : ''}
-              {delta}% this week
+              {delta}% هذا الأسبوع
             </div>
           )}
         </div>
         <div
           className={cn(
-            'h-12 w-12 rounded-2xl flex items-center justify-center bg-gradient-to-br shadow-glow',
+            'h-12 w-12 rounded-xl flex items-center justify-center',
             colorMap[color]
           )}
         >
-          <Icon className="h-6 w-6 text-white" />
+          <Icon className="h-6 w-6" />
         </div>
       </div>
     </motion.div>

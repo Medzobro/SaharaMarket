@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Sparkles, Search, ArrowRight, TrendingUp } from 'lucide-react';
+import { Search, ArrowRight, ShieldCheck, Store, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -10,23 +10,23 @@ export function Hero({ locale }: { locale: string }) {
   const t = useTranslations('Landing');
 
   return (
-    <section className="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+    <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
       <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center"
         >
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-strong mb-8 text-xs font-medium"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-yellow/15 border border-brand-yellow/30 mb-6 text-xs font-semibold text-brand-yellowDark"
           >
-            <Sparkles className="h-3.5 w-3.5 text-brand-cyan animate-pulse" />
-            <span className="text-gradient">{t('heroBadge')}</span>
+            <span className="h-2 w-2 rounded-full bg-brand-yellow animate-pulse" />
+            {t('heroBadge')}
           </motion.div>
 
           {/* Title */}
@@ -34,20 +34,16 @@ export function Hero({ locale }: { locale: string }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-brand-ink"
           >
-            <span className="block">{t('heroTitle').split('.')[0]}.</span>
-            <span className="block text-gradient">
-              {t('heroTitle').split('.').slice(1).join('.').trim()}
-            </span>
+            {t('heroTitle')}
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="mt-5 text-base sm:text-lg text-brand-muted max-w-2xl mx-auto leading-relaxed"
           >
             {t('heroSubtitle')}
           </motion.p>
@@ -59,36 +55,29 @@ export function Hero({ locale }: { locale: string }) {
             transition={{ delay: 0.4 }}
             className="mt-10 max-w-2xl mx-auto"
           >
-            <form
-              action={`/${locale}/marketplace`}
-              method="get"
-              className="relative group"
-            >
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-cyan via-brand-royal to-brand-purple opacity-50 blur-xl group-focus-within:opacity-80 transition-opacity" />
-              <div className="relative flex items-center gap-2 p-2 glass-strong rounded-3xl">
-                <Search className="ms-3 h-5 w-5 text-muted-foreground" />
+            <form action={`/${locale}/marketplace`} method="get" className="relative">
+              <div className="flex items-center gap-2 p-2 bg-white rounded-2xl border-2 border-brand-yellow shadow-glow">
+                <Search className="ms-3 h-5 w-5 text-brand-muted" />
                 <input
                   name="q"
                   type="search"
-                  placeholder="iPhone, voiture, maison, شقة..."
-                  className="flex-1 bg-transparent border-0 outline-none px-2 h-12 text-base placeholder:text-muted-foreground"
+                  placeholder="ابحث عن سيارة، هاتف، شقة..."
+                  className="flex-1 bg-transparent border-0 outline-none px-2 h-12 text-base text-brand-ink placeholder:text-brand-muted"
                 />
-                <Button type="submit" variant="cyber" size="lg" className="rounded-2xl">
-                  <Search className="h-4 w-4 sm:hidden" />
-                  <span className="hidden sm:inline">{t('ctaPrimary')}</span>
+                <Button type="submit" size="lg" className="h-12">
+                  بحث
                 </Button>
               </div>
             </form>
 
             {/* Quick suggestions */}
-            <div className="mt-4 flex items-center justify-center gap-2 flex-wrap text-xs">
-              <TrendingUp className="h-3.5 w-3.5 text-brand-cyan" />
-              <span className="text-muted-foreground">Trending:</span>
-              {['iPhone 15', 'Toyota', 'Nouakchott', 'Laptop'].map((tag) => (
+            <div className="mt-5 flex items-center justify-center gap-2 flex-wrap text-xs">
+              <span className="text-brand-muted">شائع:</span>
+              {['آيفون', 'تويوتا', 'نواكشوط', 'لابتوب'].map((tag) => (
                 <Link
                   key={tag}
                   href={`/${locale}/marketplace?q=${encodeURIComponent(tag)}`}
-                  className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-muted-foreground hover:text-foreground transition-colors"
+                  className="px-3 py-1 rounded-full bg-white border border-brand-border hover:border-brand-yellow hover:bg-brand-yellow/10 text-brand-muted hover:text-brand-ink transition-colors"
                 >
                   {tag}
                 </Link>
@@ -96,56 +85,51 @@ export function Hero({ locale }: { locale: string }) {
             </div>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
           >
-            <Button asChild size="lg" variant="default" className="min-w-[180px]">
+            <Button asChild size="lg" className="min-w-[180px]">
               <Link href={`/${locale}/marketplace`}>
                 {t('ctaPrimary')}
                 <ArrowRight className="h-4 w-4 rtl:rotate-180" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="min-w-[180px]">
+            <Button asChild size="lg" variant="green" className="min-w-[180px]">
               <Link href={`/${locale}/auth/register?role=SELLER`}>{t('ctaSecondary')}</Link>
             </Button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Trust strip */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
+            className="mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto"
           >
             {[
-              { value: '50K+', label: 'users' },
-              { value: '120K+', label: 'products' },
-              { value: '8K+', label: 'stores' },
-              { value: '15', label: 'cities' },
+              { icon: Users, value: '50K+', label: 'مستخدم' },
+              { icon: Store, value: '8K+', label: 'متجر' },
+              { icon: ShieldCheck, value: '100%', label: 'حماية' },
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl glass p-6 hover:border-brand-cyan/30 transition-colors"
+                className="rounded-2xl bg-white border border-brand-border p-4 sm:p-5 shadow-soft hover:shadow-card transition-shadow"
               >
-                <div className="font-display text-3xl font-bold text-gradient">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">
-                  {stat.label}
-                </div>
+                <stat.icon className="h-5 w-5 text-brand-yellowDark mx-auto mb-2" />
+                <div className="text-xl sm:text-2xl font-bold text-brand-ink">{stat.value}</div>
+                <div className="text-xs text-brand-muted mt-0.5">{stat.label}</div>
               </div>
             ))}
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Floating ornaments */}
-      <div className="pointer-events-none absolute top-20 -left-10 h-32 w-32 rounded-full bg-brand-cyan/20 blur-3xl animate-float" />
-      <div className="pointer-events-none absolute top-40 -right-10 h-40 w-40 rounded-full bg-brand-purple/20 blur-3xl animate-float [animation-delay:2s]" />
+      {/* Soft ornaments */}
+      <div className="pointer-events-none absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-brand-yellow/8 to-transparent -z-10" />
     </section>
   );
 }

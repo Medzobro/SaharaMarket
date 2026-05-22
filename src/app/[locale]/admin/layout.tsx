@@ -10,18 +10,17 @@ import {
   Flag,
   TrendingUp,
   Settings,
-  ShoppingBag,
 } from 'lucide-react';
 
 const nav = [
-  { href: '', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/users', label: 'Users', icon: Users },
-  { href: '/stores', label: 'Stores', icon: Store },
-  { href: '/products', label: 'Products', icon: Package },
-  { href: '/messages', label: 'Messages', icon: MessageSquare },
-  { href: '/reports', label: 'Reports', icon: Flag },
-  { href: '/analytics', label: 'Analytics', icon: TrendingUp },
-  { href: '/settings', label: 'Settings', icon: Settings },
+  { href: '', label: 'لوحة التحكم', icon: LayoutDashboard },
+  { href: '/users', label: 'المستخدمون', icon: Users },
+  { href: '/stores', label: 'المتاجر', icon: Store },
+  { href: '/products', label: 'المنتجات', icon: Package },
+  { href: '/messages', label: 'الرسائل', icon: MessageSquare },
+  { href: '/reports', label: 'البلاغات', icon: Flag },
+  { href: '/analytics', label: 'الإحصائيات', icon: TrendingUp },
+  { href: '/settings', label: 'الإعدادات', icon: Settings },
 ];
 
 export default async function AdminLayout({
@@ -43,14 +42,14 @@ export default async function AdminLayout({
     <div className="container py-6">
       <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
         <aside className="lg:sticky lg:top-20 lg:h-[calc(100vh-6rem)]">
-          <div className="glass-card rounded-3xl p-4">
+          <div className="rounded-2xl bg-white border border-brand-border shadow-soft p-4">
             <div className="flex items-center gap-2.5 px-2 py-2 mb-4">
-              <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-purple flex items-center justify-center shadow-glow">
-                <ShoppingBag className="h-4 w-4 text-white" />
+              <div className="h-10 w-10 rounded-full bg-brand-green flex items-center justify-center">
+                <Store className="h-5 w-5 text-brand-yellow" />
               </div>
               <div>
-                <div className="font-display font-bold text-sm">Admin</div>
-                <div className="text-[10px] text-muted-foreground">SaharaMarket</div>
+                <div className="font-bold text-sm text-brand-ink">لوحة الإدارة</div>
+                <div className="text-[10px] text-brand-muted">سوق موريتانيا</div>
               </div>
             </div>
             <nav className="space-y-1">
@@ -58,7 +57,7 @@ export default async function AdminLayout({
                 <Link
                   key={item.href}
                   href={`/${locale}/admin${item.href}`}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-brand-ink hover:bg-brand-yellow/10 hover:text-brand-yellowDark transition-colors"
                 >
                   <item.icon className="h-4 w-4" />
                   {item.label}

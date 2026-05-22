@@ -1,7 +1,7 @@
 {
   "Brand": {
-    "name": "SaharaMarket",
-    "tagline": "Mauritania's premium marketplace"
+    "name": "Souq Mauritania",
+    "tagline": "Mauritania's #1 marketplace"
   },
   "Nav": {
     "home": "Home",
@@ -18,8 +18,8 @@
   },
   "Landing": {
     "heroBadge": "#1 marketplace in Mauritania",
-    "heroTitle": "Discover. Shop. Connect.",
-    "heroSubtitle": "Thousands of Mauritanian products and stores in one place. Premium design, world-class experience.",
+    "heroTitle": "Buy. Sell. Connect.",
+    "heroSubtitle": "Thousands of Mauritanian products and stores in one place. Simple, fast, secure.",
     "ctaPrimary": "Start shopping",
     "ctaSecondary": "Open your store",
     "trendingTitle": "Trending now",
@@ -41,16 +41,16 @@
     "loginTitle": "Welcome back",
     "loginSubtitle": "Sign in to continue",
     "registerTitle": "Create your account",
-    "registerSubtitle": "Join the SaharaMarket community",
+    "registerSubtitle": "Join the Souq Mauritania community",
     "email": "Email",
     "password": "Password",
-    "username": "Username",
+    "username": "Full name",
     "confirmPassword": "Confirm password",
     "forgotPassword": "Forgot password?",
     "noAccount": "Don't have an account?",
     "hasAccount": "Already have an account?",
     "loginBtn": "Sign in",
-    "registerBtn": "Create account",
+    "registerBtn": "Sign up",
     "or": "or",
     "google": "Continue with Google",
     "facebook": "Continue with Facebook",
